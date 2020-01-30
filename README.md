@@ -15,10 +15,10 @@ npm install thingiverse-js
 const thingiverse = require('thingiverse-js');
 const token = 'abcdefgh12345';
 
-thingiverse('users/me', { token }).then(res => {
+thingiverse('users/me', { token: token }).then(res => {
   console.log('My location is "%s" on Thingiverse', res.body.location);
   return thingiverse.patch(`users/${res.body.name}`, {
-    token,
+    token: token,
     body: { location: 'New Caprica' }
   });
 }).then(res => {
